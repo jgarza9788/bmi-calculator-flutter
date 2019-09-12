@@ -7,9 +7,7 @@ class BMICalculator extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-
-      ),
+      theme: ThemeData.dark(),
       home: InputPage(),
     );
   }
