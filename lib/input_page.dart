@@ -12,7 +12,7 @@ class _InputPageState extends State<InputPage> {
     
     return Scaffold(
       appBar: AppBar(
-        title: Text('BMI CALCULATOR'),
+        title: Text('BMI Calculator'),
       ),
       body: Column(
         children: <Widget>[
@@ -60,15 +60,9 @@ class _InputPageState extends State<InputPage> {
 }
 
 class ReusableCard extends StatelessWidget {
-//  const ReusableCard({
-//    Key key,
-//    @required this.ThisMargin,
-//    @required this.roundedCorners,
-//  }) : super(key: key);
-
   ReusableCard({@required this.color});
 
-  Color color;
+  final Color color;
 
 
   @override
@@ -78,6 +72,13 @@ class ReusableCard extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.0),
         color: color,
+        boxShadow: [
+          new BoxShadow(
+            color: Colors.black,
+            offset: new Offset(0.0, 5.0),
+            blurRadius: 10.0
+          )
+        ],
       ),
     );
   }
