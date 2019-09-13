@@ -5,6 +5,7 @@ import 'icon_content.dart';
 import 'reusable_card.dart';
 import 'constants.dart';
 import 'results_page.dart';
+import 'bottom_button.dart';
 
 class InputPage extends StatefulWidget {
   @override
@@ -219,31 +220,20 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          GestureDetector(
-            onTap: (){
+          BottomButton(
+            text: 'Calculate',
+            onPressed: (){
               Navigator.push(context,
                 MaterialPageRoute(builder: (context){return ResultsPage();})
               );
-            },
-            child: Container(
-              child: Center(
-                  child: Text('Calculate',style: kLabelTextStyle.copyWith(
-                    fontSize: 25.0,
-                    color: Colors.white,
-                  ),
-                  ),
-              ),
-              color: kPinkColor,
-              margin: EdgeInsets.only(top:10.0),
-              width: double.infinity,
-              height: kBottomContainerHeight,
-            ),
-          )
+          }),
         ],
       )
     );
   }
 }
+
+
 
 
 class RoundIconButton extends StatelessWidget {
