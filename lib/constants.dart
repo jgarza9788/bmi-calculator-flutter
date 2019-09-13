@@ -6,6 +6,7 @@ const kInactiveCardColor = Color(0xFF0A0E21);
 const kPinkColor = Color(0xFFEB1555);
 const kPinkOverlayColor = Color(0x29EB1555);
 const kGreyColor = Color(0xFF2e2e2e);
+const kLightGreyColor = Color(0xFF4C4F5E);
 
 const kLabelTextStyle = TextStyle(
   fontSize: 18.0,
