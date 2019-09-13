@@ -5,12 +5,19 @@ import 'constants.dart';
 import 'input_page.dart';
 import 'bottom_button.dart';
 
-class ResultsPage extends StatefulWidget {
-  @override
-  _ResultsPageState createState() => _ResultsPageState();
-}
+class ResultsPage extends StatelessWidget {
 
-class _ResultsPageState extends State<ResultsPage> {
+  ResultsPage({
+    @required this.bmi,
+    @required this.resultText,
+    @required this.interpretation,
+});
+
+  final String bmi;
+  final String resultText;
+  final String interpretation;
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,6 +30,8 @@ class _ResultsPageState extends State<ResultsPage> {
         children: <Widget>[
           Expanded(
             child: Container(
+              padding: EdgeInsets.all(15.0),
+              alignment: Alignment.bottomLeft,
               child: Text('Results',style: kTitleTextStyle,textAlign: TextAlign.center,),
             ),
           ),
@@ -34,9 +43,9 @@ class _ResultsPageState extends State<ResultsPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Text('normal',style: kResultTextStyle,),
-                  Text('18.3',style: kBMITextStyle,),
-                  Text('Your BMI Result is low, you should eat more.',style:kBodyTextStyle,textAlign: TextAlign.center,),
+                  Text(resultText,style: kResultTextStyle,),
+                  Text(bmi,style: kBMITextStyle,),
+                  Text(interpretation,style:kBodyTextStyle,textAlign: TextAlign.center,),
                 ],
               ),
             ),
