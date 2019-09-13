@@ -33,6 +33,7 @@ class _InputPageState extends State<InputPage> {
 
   int height = 180;
   int weight = 60;
+  int age = 25;
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +88,7 @@ class _InputPageState extends State<InputPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    'height',
+                    'HEIGHT',
                     style: kLabelTextStyle,
                   ),
                   Row(
@@ -177,6 +178,42 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: ReusableCard(
                     color: kActiveCardColor,
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'Age',
+                          style: kLabelTextStyle,
+                        ),
+                        Text(
+                          age.toString(),
+                          style: kNumberTextStyle,
+                        ),
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              RoundIconButton(
+                                  icon: FontAwesomeIcons.minus,
+                                  onPressed:(){
+                                    setState(() {
+                                      age -=1;
+                                    });
+                                  }
+                              ),
+                              SizedBox(width: 15.0,),
+                              RoundIconButton(
+                                  icon: FontAwesomeIcons.plus,
+                                  onPressed:(){
+                                    setState(() {
+                                      age +=1;
+                                    });
+                                  }
+                              ),
+                            ]
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -190,7 +227,10 @@ class _InputPageState extends State<InputPage> {
             },
             child: Container(
               child: Center(
-                  child: Text('Calculate',style: kNumberTextStyle,
+                  child: Text('Calculate',style: kLabelTextStyle.copyWith(
+                    fontSize: 25.0,
+                    color: Colors.white,
+                  ),
                   ),
               ),
               color: kPinkColor,
